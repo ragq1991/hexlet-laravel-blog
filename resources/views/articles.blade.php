@@ -1,9 +1,9 @@
 <!-- BEGIN (write your solution here) -->
 @extends('layouts.app')
 @section('header')
-    <h1>О блоге</h1>
+    <h1>Статьи</h1>
 @endsection
 @section('content')
-    <p>Эксперименты с Ларавелем на Хекслете</p>
+    <p>Тут будут статьи</p>
 @endsection
 <!-- END -->
