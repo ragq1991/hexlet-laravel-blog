@@ -15,3 +15,6 @@ use App\Http\Controllers\Home;
 */
 
 Route::get('/', [Home::class, 'index']);
+Route::get('about', function () {
+    return view('about');
+});
