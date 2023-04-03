@@ -21,3 +21,6 @@ Route::get('about', function(){
 });
 Route::get('articles', [Articles::class, 'index'])
   ->name('articles.index');
+
+Route::get('articles/{id}', [Articles::class, 'show'])
+->name('articles.show');
