@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Articles;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home;
+use App\Models\Article;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +16,7 @@ use App\Http\Controllers\Home;
 |
 */
 Route::get('/', [Home::class, 'index']);
-Route::get('about', function (){
-    return view('about');
-});
+Route::get('about', [Articles::class, 'index']);
 Route::get('articles', function (){
     return view('articles');
 });
