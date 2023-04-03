@@ -5,9 +5,12 @@
 @endsection
 @section('content')
     <p>Эксперименты с Ларавелем на Хекслете</p>
+    <table>
     @foreach($articles as $article)
-    <p>Title: {{ $article->name }}</p>
-    <p>Body: {{ $article->body }}</p>
+    <tr>
+        <td>Title: {{ $article->name }}</td>
+        <td>Body: {{ $article->body }}</td>
+    </tr>
     @endforeach
 @endsection
 <!-- END -->
