@@ -16,7 +16,8 @@ use App\Models\Article;
 |
 */
 Route::get('/', [Home::class, 'index']);
-Route::get('about', [Articles::class, 'index']);
-Route::get('articles', function (){
-    return view('articles');
+Route::get('about', function(){
+    return view('about');
 });
+Route::get('articles', [Articles::class, 'index'])
+  ->name('articles.index');
