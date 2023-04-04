@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use App\Http\Requests\ArticlePostRequest;
+use Illuminate\Support\Facades\Session;
 
 
 class Articles extends Controller
@@ -71,5 +72,17 @@ class Articles extends Controller
         $request->session()->flash('flash_message', 'Элемент изменен');
         return redirect()
             ->route('articles.index');
+    }
+
+    public function destroy($id)
+    {
+        print_r('delete' . $id);
+        // DELETE — идемпотентный метод, поэтому результат операции всегда один и тот же
+        $article = Article::find($id);
+        if ($article) {
+            $article->delete();
+            Session::flash('flash_message', 'Элемент удален');
+        }
+        return redirect()->route('articles.index');
     }
 }

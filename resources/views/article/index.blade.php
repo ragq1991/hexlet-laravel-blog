@@ -22,6 +22,7 @@
         <h2>{{ $article->name }}</h2>
         <div>{{ Str::limit($article->body, 200) }}</div>
         <a href="{{ route('articles.edit', $article->id) }}">edit</a>
+        <a href="{{ route('articles.destroy', $article->id) }}" data-method="delete" rel="nofollow">Удалить</a>
     @endforeach
     <div>{{ $articles->links() }}</div>
 @endsection

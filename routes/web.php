@@ -10,6 +10,8 @@ Route::get('/', [Home::class, 'index']);
 Route::get('about', function(){
     return view('about');
 });
+Route::delete('articles/{id}', [Articles::class, 'destroy'])
+    ->name('articles.destroy');
 
 Route::get('articles', [Articles::class, 'index'])
     ->name('articles.index');
@@ -28,3 +30,5 @@ Route::post('articles', [Articles::class, 'store'])
 
 Route::patch('articles/{id}', [Articles::class, 'update'])
     ->name('articles.update');
+
+
