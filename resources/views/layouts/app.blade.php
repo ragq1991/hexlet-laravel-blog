@@ -12,6 +12,7 @@
             <a href="/">Home</a>
             <a href="/about">About</a>
             <a href={{ route('articles.index') }}>Articles</a>
+            <a href={{ route('articles.create') }}>Create Article</a>
             <h1>@yield('header')</h1>
             <div>@yield('content')</div>
         </div>
